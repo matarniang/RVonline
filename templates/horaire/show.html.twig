@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Horaire{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Horaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Time</th>
+                <td>{{ horaire.time }}</td>
+            </tr>
+        </tbody>
+    </table>
+        <a href="{{ path('horaire_index') }}"><button type="button" class="btn btn-primary btn-sm">retouner</button></a>
+    </div>
+{% endblock %}

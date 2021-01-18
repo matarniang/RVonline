@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendezvous index{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>IdPatient</th>
+            <th>Nom du Patient</th>
+            <th>Nom du Medecin</th>
+            <th>Spécialité</th>
+            <th>Heure du RV</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ rendezvous.patient.idpatient }} </td>
+                <td>{{ rendezvous.patient.nom }} </td>
+                <td>{{ rendezvous.medecin.nom }} </td>
+                <td>{{ rendezvous.medecin.specialite }}</td>
+                <td>{{ rendezvous.dateRdv }}</td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('rendezvous_new') }}">Create new</a>
+{% endblock %}

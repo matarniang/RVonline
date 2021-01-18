@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+    <div style="margin-right: 800px">{{ form_row(form.time, {'attr': {'class' : 'form-control','placeholder':'Saisir l\'heure du medecin.....'} } ) }}</div>
+    <div style="margin-right: 800px">{{ form_row(form.medecin, {'attr': {'class' : 'form-control','placeholder':'Saisir l\'heure du medecin.....'} } ) }}</div>
+    <button class="btn btn-primary btn-sm" style="margin-top: 20px">{{ button_label|default('Savegarder') }}</button>
+{{ form_end(form) }}

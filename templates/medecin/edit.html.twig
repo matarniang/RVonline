@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Medecin{% endblock %}
+
+{% block body %}
+    <div class="container">
+    {{ include('medecin/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('horaire_delete', {'idtimings': horaire.idtimings}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ horaire.idtimings) }}">
+    <a href="{{ path('horaire_show', {'idtimings': horaire.idtimings}) }}"><button type="button" class="btn btn-primary btn-sm">Show</button></a>     <a href="{{ path('horaire_edit', {'idtimings': horaire.idtimings}) }}"><button type="button" class="btn btn-dark btn-sm">edit</button></a>  <button class="btn btn-danger btn-sm">Delete</button>
+
+
+</form>

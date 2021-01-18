@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Medecin{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+    </div>
+    <div class="container">
+    <table class="table">
+        <thead>
+              <tr>
+                  <th>Nom</th>
+                  <th>Specialite</th>
+                  <th>Email</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ medecin.nom }}</td>
+                <td>{{ medecin.specialite }}</td>
+                <td>{{ medecin.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+{% endblock %}

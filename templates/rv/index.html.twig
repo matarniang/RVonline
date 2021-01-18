@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RvController!{% endblock %}
+
+{% block body %}
+
+        <div class="container" style="margin-top: 30px ">
+                <table class="table" style="width: 500px">
+                        <thead >
+                        <tr>
+                                <th>Nom</th>
+                                <th>Spécialité</th>
+                                <th>Horaires</th>
+                                <th>Rendezvous</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                                        {% for horaire in Horaires  %}
+                                        <tr>
+                                        <td>{{ horaire.medecin.nom }}</td>
+                                        <td>{{ horaire.medecin.specialite}}</td>
+                                        <td>{{ horaire.time }}</td>
+                                        <td><a href="{{ path('login_patient') }}"><button class="btn btn-primary btn-sm">Rendezvous</button></a></td>
+                                        </tr>
+                                        {% endfor %}
+                        </tbody>
+
+                </table>
+        </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendezvous{% endblock %}
+
+{% block body %}
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idrendezvous</th>
+                <td>{{ rendezvou.idrendezvous }}</td>
+            </tr>
+            <tr>
+                <th>DateReservation</th>
+                <td>{{ rendezvou.dateReservation ? rendezvou.dateReservation|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateRdv</th>
+                <td>{{ rendezvou.dateRdv ? rendezvou.dateRdv|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{ include('rendezvous/_delete_form.html.twig') }}
+{% endblock %}

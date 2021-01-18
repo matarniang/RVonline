@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rendezvous index{% endblock %}
+{% block stylesheets %}
+    <style type="text/css">
+
+        .table{
+            margin-top: 10px;
+            margin-left: 5px;
+            text-align: center;
+        }
+        .btn{
+            margin-left: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom Patient</th>
+                <th>Nom Medecin</th>
+                <th>specialite</th>
+                <th>DateRes</th>
+                <th>DateRdv</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rendezvou in rendezvouses %}
+            <tr>
+                <td>{{ rendezvou.idrendezvous }}</td>
+                <td>{{ rendezvou.patient.nom }}</td>
+                <td>{{ rendezvou.medecin.nom }}</td>
+                <td>{{ rendezvou.medecin.specialite }}</td>
+                <td>{{ rendezvou.dateReservation ? rendezvou.dateReservation|date('Y-m-d') : '' }}</td>
+                <td>{{ rendezvou.dateRdv ? rendezvou.dateRdv|date('Y-m-d') : '' }}</td>
+                <td>
+                    {{ include('rendezvous/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('rendezvous_new') }}"><button type="button" class="btn btn-dark btn-sm">Create new</button></a>
+{% endblock %}

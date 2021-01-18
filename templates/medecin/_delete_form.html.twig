@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('medecin_delete', {'idmedecin': medecin.idmedecin}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ medecin.idmedecin) }}">
+    <a href="{{ path('medecin_show', {'idmedecin': medecin.idmedecin}) }}"><button type="button" class="btn btn-primary btn-sm">Show</button></a>    <a href="{{ path('medecin_edit', {'idmedecin': medecin.idmedecin}) }}"><button type="button" class="btn btn-dark btn-sm">edit</button></a>    <button class="btn btn-danger btn-sm ">Delete</button>
+</form>
